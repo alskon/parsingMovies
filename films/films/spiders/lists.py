@@ -36,6 +36,7 @@ class FilmSpider(scrapy.Spider):
                 if th == 'Страны': th = 'Страна'
                 if th == 'Режиссёры': th = 'Режиссёр'
                 content[th] = td
+            if 'title' not in content: content['title'] = ''
             if 'Жанр' not in content: content['Жанр'] = ''
             if 'Страна' not in content: content['Страна'] = ''
             if 'Режиссёр' not in content: content['Режиссёр'] = ''
