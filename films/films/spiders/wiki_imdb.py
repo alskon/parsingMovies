@@ -5,7 +5,7 @@ from scrapy.crawler import CrawlerProcess
 
 
 class FilmSpider(scrapy.Spider):
-    name = "lists"
+    name = "wiki_imdb"
     allowed_domains = ["ru.wikipedia.org"]
     urls = []
     start_urls = ["https://ru.wikipedia.org/wiki/Категория:Фильмы_по_алфавиту"]
@@ -65,7 +65,7 @@ class FilmSpider(scrapy.Spider):
 
 c = CrawlerProcess({
     'USER_AGENT': 'Mozilla/5.0',
-    'FEEDS': {'output.csv': {'format': 'csv'}},
+    'FEEDS': {'out_wiki_imdb.csv': {'format': 'csv'}},
 })
 c.crawl(FilmSpider)
 c.start()
